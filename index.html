@@ -3,119 +3,199 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>FOREX MASTER | Redirecting...</title>
+    <title>FOREX MASTER | Official Secure Gateway</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.5.1/dist/confetti.browser.min.js"></script>
     
     <style>
         body { 
             font-family: 'Poppins', sans-serif; 
-            background: linear-gradient(-45deg, #0f172a, #1e293b, #1e1b4b, #0f172a);
-            background-size: 400% 400%;
-            animation: gradientBG 10s ease infinite;
+            background: #020617;
             color: white; 
-            overflow-x: hidden;
-        }
-
-        @keyframes gradientBG {
-            0% { background-position: 0% 50%; }
-            50% { background-position: 100% 50%; }
-            100% { background-position: 0% 50%; }
-        }
-
-        .glass-card {
-            background: rgba(255, 255, 255, 0.03);
-            backdrop-filter: blur(15px);
-            border: 1px solid rgba(255, 255, 255, 0.1);
-        }
-
-        .loader-bar {
-            width: 100%;
-            height: 4px;
-            background: rgba(255,255,255,0.1);
-            border-radius: 10px;
             overflow: hidden;
-            margin-top: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
         }
 
-        .loader-progress {
-            width: 100%;
-            height: 100%;
-            background: #3b82f6;
-            animation: load 5s linear forwards;
+        /* Animated Grid Background */
+        .bg-grid {
+            position: fixed;
+            top: 0; left: 0; width: 100%; height: 100%;
+            background-image: linear-gradient(rgba(59, 130, 246, 0.05) 1px, transparent 1px),
+                              linear-gradient(90deg, rgba(59, 130, 246, 0.05) 1px, transparent 1px);
+            background-size: 40px 40px;
+            z-index: 1;
+            perspective: 1000px;
         }
 
-        @keyframes load {
-            0% { width: 100%; }
-            100% { width: 0%; }
+        .bg-grid-animation {
+            width: 100%; height: 100%;
+            background: inherit;
+            transform: rotateX(45deg);
+            animation: moveGrid 20s linear infinite;
+        }
+
+        @keyframes moveGrid {
+            0% { background-position: 0 0; }
+            100% { background-position: 0 1000px; }
+        }
+
+        /* Glassmorphism Card Scaling */
+        .premium-card {
+            background: rgba(15, 23, 42, 0.8);
+            backdrop-filter: blur(25px) saturate(180%);
+            border: 1px solid rgba(59, 130, 246, 0.2);
+            box-shadow: 0 0 50px rgba(0, 0, 0, 0.5), inset 0 0 20px rgba(59, 130, 246, 0.1);
+            width: 95%;
+            max-width: 450px;
+            padding: 2.5rem;
+            border-radius: 3rem;
+            z-index: 10;
+            position: relative;
+        }
+
+        /* Glow Elements */
+        .glow-overlay {
+            position: absolute;
+            top: -10%; left: -10%; width: 120%; height: 120%;
+            background: radial-gradient(circle at center, rgba(59, 130, 246, 0.1) 0%, transparent 70%);
+            z-index: -1;
+        }
+
+        /* Verified Pulse */
+        .avatar-container {
+            position: relative;
+            display: inline-block;
+            padding: 10px;
+        }
+        .avatar-ring {
+            position: absolute;
+            inset: 0;
+            border: 2px solid #3b82f6;
+            border-radius: 50%;
+            animation: ringPulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+        }
+        @keyframes ringPulse {
+            0% { transform: scale(0.95); opacity: 1; }
+            100% { transform: scale(1.15); opacity: 0; }
+        }
+
+        .shimmer-btn {
+            background: linear-gradient(90deg, #2563eb, #3b82f6, #2563eb);
+            background-size: 200% auto;
+            animation: shine 3s linear infinite;
+        }
+        @keyframes shine {
+            to { background-position: 200% center; }
         }
     </style>
 </head>
-<body class="min-h-screen flex items-center justify-center p-4">
+<body>
 
-    <div class="max-w-md w-full glass-card rounded-3xl p-6 text-center shadow-2xl">
-        
-        <div class="relative inline-block mb-4">
+    <div class="bg-grid">
+        <div class="bg-grid-animation"></div>
+    </div>
+
+    <div class="premium-card">
+        <div class="glow-overlay"></div>
+
+        <div class="flex justify-center mb-6">
+            <div class="bg-blue-500/10 border border-blue-500/30 px-5 py-2 rounded-full flex items-center gap-3">
+                <span class="flex h-2 w-2 relative">
+                    <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-blue-400 opacity-75"></span>
+                    <span class="relative inline-flex rounded-full h-2 w-2 bg-blue-500"></span>
+                </span>
+                <span class="text-[11px] font-bold tracking-[0.15em] text-blue-400 uppercase">System Secure & Live</span>
+            </div>
+        </div>
+
+        <div class="avatar-container mb-2">
+            <div class="avatar-ring"></div>
             <img src="https://i.ibb.co/7NNWnx36/Whats-App-Image-2026-03-09-at-4-05-59-PM.jpg" 
-                 alt="Profile" 
-                 class="w-24 h-24 rounded-full border-2 border-blue-500 mx-auto object-cover p-1 shadow-lg shadow-blue-500/20">
-            <div class="absolute -bottom-1 -right-1 bg-blue-500 px-2 py-0.5 rounded-md text-[10px] font-bold shadow-lg">VERIFIED</div>
-        </div>
-
-        <h1 class="text-2xl font-bold tracking-tight">FOREX MASTER</h1>
-        <p class="text-blue-400 text-[10px] font-semibold uppercase tracking-[0.2em] mb-6">Trading Community</p>
-
-        <div class="text-left space-y-3 mb-6">
-            <div class="flex items-center space-x-3 bg-white/5 p-3 rounded-xl border border-white/5">
-                <i class="fas fa-check-circle text-blue-500"></i>
-                <span class="text-sm font-medium">Trading Tips & Discussion</span>
-            </div>
-            <div class="flex items-center space-x-3 bg-white/5 p-3 rounded-xl border border-white/5">
-                <i class="fas fa-chart-line text-green-500"></i>
-                <span class="text-sm font-medium">Daily Updates & Big Wins</span>
-            </div>
-            <div class="flex items-center space-x-3 bg-white/5 p-3 rounded-xl border border-white/5">
-                <i class="fas fa-users text-purple-500"></i>
-                <span class="text-sm font-medium">Join Our Growing Family</span>
+                 alt="Forex Master" 
+                 class="w-28 h-28 rounded-full border-4 border-slate-900 object-cover relative z-10 shadow-2xl">
+            <div class="absolute bottom-4 right-4 bg-blue-600 p-1.5 rounded-full z-20 border-4 border-slate-900 shadow-xl">
+                <i class="fas fa-shield-alt text-xs"></i>
             </div>
         </div>
 
-        <div class="bg-blue-600/10 rounded-2xl p-4 mb-6 border border-blue-500/20">
-            <p class="text-gray-400 text-xs mb-1">Redirecting to Telegram in...</p>
-            <div id="countdown" class="text-4xl font-bold text-white">5</div>
-            <div class="loader-bar">
-                <div class="loader-progress"></div>
+        <h1 class="text-3xl font-bold tracking-tight mb-1 text-white">FOREX MASTER</h1>
+        <p class="text-blue-500 text-[10px] font-bold uppercase tracking-[0.4em] mb-8">Premium Signal Network</p>
+
+        <div class="grid grid-cols-2 gap-4 mb-8">
+            <div class="bg-white/5 p-4 rounded-3xl border border-white/5">
+                <p class="text-blue-400 text-xl font-bold">92%</p>
+                <p class="text-[9px] text-gray-500 uppercase tracking-widest">Accuracy</p>
+            </div>
+            <div class="bg-white/5 p-4 rounded-3xl border border-white/5">
+                <p class="text-green-400 text-xl font-bold">14k+</p>
+                <p class="text-[9px] text-gray-500 uppercase tracking-widest">Members</p>
+            </div>
+        </div>
+
+        <div class="mb-10 px-2">
+            <div class="flex justify-between items-end mb-3">
+                <div class="text-left">
+                    <p class="text-[10px] text-gray-500 uppercase font-bold tracking-widest">Status</p>
+                    <p id="status-text" class="text-xs font-semibold text-blue-300">Initiating handshake...</p>
+                </div>
+                <div class="text-4xl font-black italic text-white/20" id="countdown">5</div>
+            </div>
+            <div class="w-full h-2 bg-white/5 rounded-full overflow-hidden border border-white/5">
+                <div id="progress-bar" class="h-full bg-blue-500 transition-all duration-1000 ease-linear" style="width: 0%"></div>
             </div>
         </div>
 
         <a id="tgLink" href="https://t.me/+vfYmJOdWqsFlNzk0" 
-           class="block w-full bg-blue-600 hover:bg-blue-500 text-white font-bold py-4 rounded-2xl transition-all active:scale-95 flex items-center justify-center gap-3 shadow-lg shadow-blue-900/30">
-            <i class="fab fa-telegram text-xl"></i>
-            JOIN MANUALLY
+           class="shimmer-btn block w-full py-5 rounded-[1.5rem] text-white font-bold text-lg transition-all active:scale-95 shadow-2xl shadow-blue-500/20 flex items-center justify-center gap-4">
+            <i class="fab fa-telegram-plane text-2xl"></i>
+            TELEGRAM COMMUNITY
         </a>
 
-        <div class="mt-6 flex flex-col items-center gap-2">
-            <span class="text-[9px] text-gray-500 uppercase tracking-widest">AD Managed by Om</span>
-            <a href="https://t.me/+LWS-0kIYzJ4wMjll" class="text-[11px] text-blue-400/80 hover:text-blue-400 transition">@FOREXMASTER</a>
+        <div class="mt-10 pt-6 border-t border-white/5">
+            <p class="text-[9px] text-gray-500 tracking-[0.3em] uppercase mb-1">Authenticated via FX MASTER</p>
+            <p class="text-[11px] font-bold text-white/80">DESIGN BY OM</p>
         </div>
     </div>
 
     <script>
         let timeLeft = 5;
         const countdownElement = document.getElementById('countdown');
+        const progressBar = document.getElementById('progress-bar');
+        const statusText = document.getElementById('status-text');
         const targetURL = "https://t.me/+vfYmJOdWqsFlNzk0";
+
+        // Start progress
+        setTimeout(() => progressBar.style.width = "100%", 100);
 
         const timer = setInterval(() => {
             timeLeft--;
             countdownElement.textContent = timeLeft;
 
+            if(timeLeft == 4) statusText.textContent = "Bypassing firewall...";
+            if(timeLeft == 3) statusText.textContent = "Validating VIP token...";
+            if(timeLeft == 2) statusText.textContent = "Syncing signals...";
+            if(timeLeft == 1) statusText.textContent = "Connection ready!";
+
             if (timeLeft <= 0) {
                 clearInterval(timer);
-                window.location.href = targetURL;
+                
+                confetti({
+                    particleCount: 150,
+                    spread: 80,
+                    origin: { y: 0.7 },
+                    colors: ['#2563eb', '#60a5fa', '#ffffff']
+                });
+
+                setTimeout(() => {
+                    window.location.href = targetURL;
+                }, 900);
             }
         }, 1000);
     </script>
-
 </body>
 </html>
