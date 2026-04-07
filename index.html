@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>FOREX MASTER | Official Community</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
@@ -15,12 +15,12 @@
             background: #020617;
             color: white; 
             overflow-x: hidden;
-            overflow-y: auto; 
             display: flex;
             align-items: center;
             justify-content: center;
             min-height: 100vh;
             margin: 0;
+            padding: 20px 0; /* Extra padding for mobile scroll */
         }
 
         .bg-grid {
@@ -36,21 +36,19 @@
             background: rgba(15, 23, 42, 0.95);
             backdrop-filter: blur(15px);
             border: 1px solid rgba(59, 130, 246, 0.2);
-            width: 92%;
-            max-width: 420px;
-            padding: 2.5rem 2rem;
-            border-radius: 2.5rem;
-            margin: 20px auto;
+            width: 90%; /* Responsive width */
+            max-width: 400px;
+            padding: 2rem 1.5rem; /* Adjusted for mobile */
+            border-radius: 2rem;
             position: relative;
             box-shadow: 0 30px 60px rgba(0, 0, 0, 0.6);
         }
 
-        /* Progress Bar Animation (10 Seconds) */
         .loader-progress {
             width: 0%;
             height: 100%;
             background: #3b82f6;
-            transition: width 10s linear; /* Match 10s countdown */
+            transition: width 10s linear; 
         }
 
         .shimmer-btn {
@@ -73,6 +71,12 @@
             0% { transform: scale(1); opacity: 0.6; }
             100% { transform: scale(1.15); opacity: 0; }
         }
+
+        /* Fix for smaller mobile screens */
+        @media (max-width: 380px) {
+            .premium-card { padding: 1.5rem 1rem; }
+            h1 { font-size: 1.5rem !important; }
+        }
     </style>
 </head>
 <body>
@@ -82,50 +86,46 @@
     <div class="premium-card text-center">
         <div class="inline-flex items-center gap-2 bg-green-500/10 border border-green-500/20 px-4 py-1.5 rounded-full mb-6">
             <span class="h-2 w-2 rounded-full bg-green-500 animate-pulse"></span>
-            <span class="text-[10px] font-bold tracking-[0.1em] text-green-400 uppercase">14,284 Members Online</span>
+            <span class="text-[9px] sm:text-[10px] font-bold tracking-[0.1em] text-green-400 uppercase">14,284 Members Online</span>
         </div>
 
         <div class="relative inline-block mb-4">
             <div class="avatar-ring"></div>
             <img src="https://i.ibb.co/7NNWnx36/Whats-App-Image-2026-03-09-at-4-05-59-PM.jpg" 
                  alt="Forex Master" 
-                 class="w-24 h-24 rounded-full border-4 border-slate-900 object-cover relative z-10">
+                 class="w-20 h-20 sm:w-24 sm:h-24 rounded-full border-4 border-slate-900 object-cover relative z-10">
         </div>
 
-        <h1 class="text-3xl font-bold mb-1">FOREX MASTER</h1>
-        <p class="text-blue-500 text-[10px] font-bold uppercase tracking-[0.3em] mb-8 text-center">Premium Network</p>
+        <h1 class="text-2xl sm:text-3xl font-bold mb-1">FOREX MASTER</h1>
+        <p class="text-blue-500 text-[9px] font-bold uppercase tracking-[0.3em] mb-6 text-center">Premium Network</p>
 
-        <div class="space-y-3 mb-8">
-            <div class="flex items-center gap-3 bg-white/5 p-3 rounded-2xl border border-white/5">
-                <i class="fas fa-check-circle text-blue-500"></i>
-                <span class="text-xs font-semibold">
-🚨 JOIN TELEGRAM NOW 🚨
-/span>
+        <div class="space-y-2 mb-8">
+            <div class="flex items-center gap-3 bg-white/5 p-3 rounded-xl border border-white/5">
+                <i class="fas fa-check-circle text-blue-500 text-sm"></i>
+                <span class="text-[11px] font-semibold">🚨 JOIN TELEGRAM NOW 🚨</span>
             </div>
-            <div class="flex items-center gap-3 bg-white/5 p-3 rounded-2xl border border-white/5">
-                <i class="fas fa-bolt text-yellow-500"></i>
-                <span class="text-xs font-semibold">💰 FREE GOLD SIGNALS DAILY</span>
+            <div class="flex items-center gap-3 bg-white/5 p-3 rounded-xl border border-white/5">
+                <i class="fas fa-bolt text-yellow-500 text-sm"></i>
+                <span class="text-[11px] font-semibold">💰 FREE GOLD SIGNALS DAILY</span>
             </div>
-        </div>
-  <div class="flex items-center gap-3 bg-white/5 p-3 rounded-2xl border border-white/5">
-                <i class="fas fa-bolt text-yellow-500"></i>
-                <span class="text-xs font-semibold">📊 FOREX LIVE ANALYSIS & SETUPS</span>
+            <div class="flex items-center gap-3 bg-white/5 p-3 rounded-xl border border-white/5">
+                <i class="fas fa-bolt text-yellow-500 text-sm"></i>
+                <span class="text-[11px] font-semibold">📊 FOREX LIVE ANALYSIS & SETUPS</span>
             </div>
-        </div>
-      <div class="flex items-center gap-3 bg-white/5 p-3 rounded-2xl border border-white/5">
-                <i class="fas fa-bolt text-yellow-500"></i>
-                <span class="text-xs font-semibold">📉 HIGH ACCURACY ENTRIES</span>
+            <div class="flex items-center gap-3 bg-white/5 p-3 rounded-xl border border-white/5">
+                <i class="fas fa-bolt text-yellow-500 text-sm"></i>
+                <span class="text-[11px] font-semibold">📉 HIGH ACCURACY ENTRIES</span>
             </div>
-        </div>
-          <div class="flex items-center gap-3 bg-white/5 p-3 rounded-2xl border border-white/5">
-                <i class="fas fa-bolt text-yellow-500"></i>
-                <span class="text-xs font-semibold">🔥 DON’T MISS THE NEXT EXPLOSIVE MOVE</span>
+            <div class="flex items-center gap-3 bg-white/5 p-3 rounded-xl border border-white/5">
+                <i class="fas fa-bolt text-yellow-500 text-sm"></i>
+                <span class="text-[11px] font-semibold">🔥 DON’T MISS THE NEXT MOVE</span>
             </div>
         </div>
-        <div class="mb-8 bg-black/20 p-4 rounded-3xl border border-white/5">
+
+        <div class="mb-8 bg-black/20 p-4 rounded-2xl border border-white/5">
             <div class="flex justify-between items-center mb-2">
-                <p id="status-text" class="text-[10px] text-blue-300 font-bold uppercase tracking-wider">Secure Handshake...</p>
-                <div class="text-3xl font-black italic text-white/90" id="countdown">10</div>
+                <p id="status-text" class="text-[9px] text-blue-300 font-bold uppercase tracking-wider">Secure Handshake...</p>
+                <div class="text-2xl font-black italic text-white/90" id="countdown">10</div>
             </div>
             <div class="w-full h-1.5 bg-white/10 rounded-full overflow-hidden">
                 <div id="progress-bar" class="loader-progress"></div>
@@ -133,14 +133,14 @@
         </div>
 
         <a href="https://t.me/+Uj2I5LKUkCI3ODZk" 
-           class="shimmer-btn block w-full py-4 rounded-2xl text-white font-bold text-lg transition-all active:scale-95 flex items-center justify-center gap-3">
-            <i class="fab fa-telegram-plane text-2xl"></i>
+           class="shimmer-btn block w-full py-4 rounded-xl text-white font-bold text-base sm:text-lg transition-all active:scale-95 flex items-center justify-center gap-3">
+            <i class="fab fa-telegram-plane text-xl"></i>
             JOIN COMMUNITY
         </a>
 
         <div class="mt-8 pt-4 border-t border-white/5 flex flex-col items-center gap-1 opacity-50">
-            <p class="text-[8px] uppercase tracking-[0.2em]">Authentication Gateway</p>
-            <p class="text-[10px] font-bold text-blue-400">DESIGN BY OM</p>
+            <p class="text-[7px] uppercase tracking-[0.2em]">Authentication Gateway</p>
+            <p class="text-[9px] font-bold text-blue-400">DESIGN BY OM</p>
         </div>
     </div>
 
@@ -151,14 +151,12 @@
         const statusText = document.getElementById('status-text');
         const targetURL = "https://t.me/+vfYmJOdWqsFlNzk0";
 
-        // Start progress bar 
         setTimeout(() => { if(progressBar) progressBar.style.width = "100%"; }, 100);
 
         const timer = setInterval(() => {
             timeLeft--;
             if(countdownElement) countdownElement.textContent = timeLeft;
 
-            // Change status text based on time
             if(timeLeft == 8) statusText.textContent = "Bypassing Encryptions...";
             if(timeLeft == 6) statusText.textContent = "Verifying VIP Token...";
             if(timeLeft == 4) statusText.textContent = "Syncing Signals...";
@@ -167,11 +165,9 @@
 
             if (timeLeft <= 0) {
                 clearInterval(timer);
-                
-                // Confetti celebration
                 confetti({
-                    particleCount: 150,
-                    spread: 80,
+                    particleCount: 100,
+                    spread: 70,
                     origin: { y: 0.8 },
                     colors: ['#2563eb', '#ffffff', '#60a5fa']
                 });
